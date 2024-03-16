@@ -1,0 +1,366 @@
+<style>
+/**{border: 1px solid black;}*/
+
+@media only screen and (max-width: 1000px){
+      .app{
+        min-width: 55%;
+      }
+      
+      h1{
+        font-size: 1rem;
+      }
+     }
+@media only screen and (max-width: 700px){
+  .app{
+       min-width: 90%;
+  }
+h1{font-size: 1.8rem ;}
+}
+@media screen and (min-width: 550px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .container {
+    width: 450px;
+  }}
+
+body{
+    background-color: rgba(30, 30, 56, 0.979);
+     }
+     
+  
+header{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+      }
+
+header > img{
+    width:300px;
+   }
+
+h1{
+    color:rgb(241, 255, 250);
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+.container{
+             width:100%;
+             
+             
+            }
+
+.app{ background-color:rgb(245, 246, 247);
+      width:40%;
+      
+      margin: 10px auto;
+      height:auto;
+      border-radius: 30px;
+      border-right: 15px solid grey;
+      border-bottom: 15px solid grey;
+
+    }
+.result{padding:20px ;
+        height:auto;
+        display:grid;
+        grid-template-columns: 0.25fr 0.25fr;
+        gap: 10px;
+        }
+.top-part{
+            width:100%;
+            display:grid;
+            justify-content: center;
+            align-items: center;
+          }
+#poke-img{
+          display:flex;
+          width:90%;
+          height: 16rem;
+          justify-content: center;
+          align-items: center;
+          margin: 10px auto;
+          background-color: rgb(240, 241, 247);
+          }
+#types{ padding-left:3rem;
+           height:auto;
+           display:flex;
+           gap: 5px;
+           align-items: center;
+          
+           text-align: center;
+           
+           
+         }
+
+#stats{padding: 3rem;
+       display:grid;
+       grid-template-columns: 0.75fr 0.5fr; 
+       text-align: center; 
+       gap: 10px;
+      }
+
+.box{
+      background-color:rgba(127,33,171,255);
+      color: blanchedalmond;
+      border-radius: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 0.8rem;
+      }
+.top-paragraph{
+                font-size: 20px;
+                font-style: inherit;
+               }
+#search-input{
+              height:2.3rem;
+              width:13rem;
+              border:3px solid rgb(207, 197, 197);
+              border-radius: 3px;
+              }
+#search-button{
+               width: 5rem;
+               height: 2.5rem;
+               background-color: rgba(127,33,171,255);
+               color: white;
+               border-radius: 20px;
+               cursor: pointer;
+              }
+              
+span{      
+           font-size: 0.8rem;
+           height: 1.5rem;
+           width:5rem;
+           padding-top: 5px;
+           border-radius: 5px;
+           color: black;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           font-weight: 600;
+      } 
+.electric{
+          background-color: #fecc33;
+          }
+.normal {
+          background-color: #b7b7aa;
+        }
+
+.fire {
+        background-color: #ff6f52;
+      }
+
+.water {
+          background-color: #42a1ff;
+        }
+
+.electric {
+            background-color: #fecc33;
+          }
+
+.grass {
+          background-color: #78cc55;
+        }
+
+.ice {
+        background-color: #66ccfe;
+      }
+
+.fighting {
+            background-color: #d3887e;
+          }
+
+.poison {
+          background-color: #c68bb7;
+        }
+
+.ground {
+          background-color: #dfba52;
+        }
+
+.flying {
+            background-color: #8899ff;
+          }
+
+.psychic {
+            background-color: #ff66a3;
+          }
+
+.bug {
+        background-color: #aabb23;
+      }
+
+.rock {
+          background-color: #baaa66;
+        }
+
+.ghost {
+          background-color: #9995d0;
+        }
+
+.dragon {
+          background-color: #9e93f1;
+        }
+
+.dark {
+        background-color: #b59682;
+      }
+
+.steel {
+          background-color: #abaabb;
+        }
+
+.fairy {
+          background-color: #ed99ed;
+        }            
+
+
+</style>
+
+<!DOCTYPE html>
+    <html lang="en">
+          <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Pokémon Search App</title>
+              
+          </head>
+
+ <!--body starts here-->
+ 
+         <body>
+            <header>
+                <img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freecodecamplogo">
+                <h1>Pokémon Search App</h1>
+            </header>
+            <!--start of the search part-->
+            <div class="container">
+                <div class="app">
+                 <div class="top-part">
+                 <div>
+                    <p class="top-paragraph">Search for Pokémon Name or ID:</p>
+                 </div>
+                 <div>
+                    <input type="text" id="search-input" required>
+                    <button type="button" id="search-button">Search</button>
+                 </div>
+                </div>
+                
+                <div class="result">
+                    <div id="pokemon-name"></div>
+                    <div id="pokemon-id"></div>
+                    <div id="weight"></div>
+                    <div id="height"></div>
+                </div>
+                <div id="poke-img"> <img src="" alt="" id="i"></div>
+                <div id="types">
+                </div>
+                 <div id="stats">
+                    <div class="box"><p>Base</p></div> 
+                    <div class="box"><p>Stats</p></div>
+                    <div id="hp-box" class="box"><p>HP</p></div>
+                    <div class="box" id="hp" ></div>
+                    <div id="attack-box" class="box"><p>Attack</p></div>
+                    <div class="box" id="attack"></div>
+                    <div id="defense-box" class="box"><p>Defense</p></div>
+                    <div class="box" id="defense"></div>
+                    <div id="special-attack-box" class="box"><p>Sp. attack</p></div>
+                    <div class="box" id="special-attack"></div>
+                    <div id="special-defense-box" class="box"><p>Sp. defense</p></div>
+                    <div class="box" id="special-defense"></div>
+                    <div id="speed-box" class="box"><p>Speed</p></div>
+                    <div class="box" id="speed"></div>
+                    </div>
+
+                </div>
+           </div>
+           <script>
+		   const searchBtn = document.getElementById('search-button');
+const pokeName = document.getElementById('pokemon-name');
+const pokeId = document.getElementById('pokemon-id');
+const pokeWeight = document.getElementById('weight');
+const pokeHeight = document.getElementById('height');
+const pokeImg = document.getElementById('poke-img');
+const hpBox = document.getElementById('hp');
+const attackBox = document.getElementById('attack');
+const defenseBox = document.getElementById('defense');
+const specialAttackBox = document.getElementById('special-attack');
+const specialDefenseBox = document.getElementById('special-defense');
+const speed = document.getElementById('speed');
+const types = document.getElementById('types');
+const searchBox = document.getElementById('search-input');
+
+//const namePoke = searchInput;
+//const latest =`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${namePoke}`;
+const fetchData = async()=>{
+    try{
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const latest =`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchInput}`;
+    const res = await fetch(latest);
+    const data = await res.json();
+    console.log(data);
+    console.log(searchInput);
+    showPoke(data);
+    typeViewer(data);
+}
+    catch(err){
+        alert('pokemon not found');
+        clearDisplay();
+
+
+    }
+};
+const showPoke =(data)=>{
+    const {name, weight, height,id} = data;
+    pokeName.textContent =  name.toUpperCase();
+    pokeId.textContent = `#${id}` ;
+    pokeHeight.textContent = `Hieght: ${height}`;
+    pokeWeight.textContent = `Weight: ${weight}`;
+
+    const {avatar} = data.sprites.front_default;
+    pokeImg.innerHTML = `<img width="150px" src='${data.sprites.front_default}' alt='${name}' id='sprite'>`;
+    hpBox.innerHTML = `<p>${data.stats[0].base_stat}</p>`;
+    attackBox.innerHTML =`<p> ${data.stats[1].base_stat}</p>`;
+    defenseBox.innerHTML =`<p> ${data.stats[2].base_stat}</p>`;
+    specialAttackBox.innerHTML=`<p>${data.stats[3].base_stat}</p>`;
+    specialDefenseBox.innerHTML = `<p> ${data.stats[4].base_stat}</p>`;
+    speed.innerHTML= `<p>${data.stats[5].base_stat}</p>`;
+    
+    
+    console.log(name);
+    
+};
+const typeViewer = (data)=>{
+    types.innerHTML = data.types
+      .map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`)
+      .join('');
+};
+const clearDisplay =()=>{
+    types.innerHTML = "";
+    pokeName.textContent =  '';
+    pokeId.textContent = '' ;
+    pokeHeight.textContent = '';
+    pokeWeight.textContent = '';
+    pokeImg.innerHTML = "";
+    hpBox.innerHTML = "";
+    attackBox.innerHTML ="";
+    defenseBox.innerHTML ="";
+    specialAttackBox.innerHTML="";
+    specialDefenseBox.innerHTML = "";
+    speed.innerHTML= "";
+    };
+
+
+
+searchBtn.addEventListener('click', fetchData);
+searchBox.addEventListener('keydown', (e)=>{
+if(e.key ==='Enter'){
+    fetchData();
+}
+})
+            
+           </script>
+         </body>
+         </html>
+                
+            
